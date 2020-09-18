@@ -1,0 +1,36 @@
+{
+  "name": "emotamacamera",
+  "version": "0.0.0",
+  "description": "Virtual Camera converting face expression to ball animation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shortintern2020-C-cryptograph/TeamE.git"
+  },
+  "keywords": [
+    "camera",
+    "face",
+    "expression",
+    "virtual",
+    "ball",
+    "animation",
+    "pc"
+  ],
+  "author": "mirokubosatsu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shortintern2020-C-cryptograph/TeamE/issues"
+  },
+  "homepage": "https://github.com/shortintern2020-C-cryptograph/TeamE#readme",
+  "devDependencies": {
+    "electron": "^10.1.2",
+    "face-api.js": "^0.22.2"
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "node-webcam": "^0.6.4"
+  }
+}
