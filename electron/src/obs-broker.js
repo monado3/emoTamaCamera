@@ -1,14 +1,12 @@
 // author monado3
 const path = require('path');
-const { exec, execSync } = require('child_process');
+const { exec } = require('child_process');
 const OBSWebSocket = require('obs-websocket-js');
 
-class OBS {
+class OBSBroker {
 
     obsexe = String.raw`C:\PROGRA~1\obs-studio\bin\64bit\obs64.exe`;
     obsdir = path.dirname(this.obsexe);
-    // obsexe = String.raw`C:\Program Files\obs-studio\bin\64bit\obs64.exe`;
-
 
     constructor() {
         this.sock = new OBSWebSocket();
@@ -18,7 +16,7 @@ class OBS {
     }
     launch() {
         process.chdir(this.obsdir);
-        execSync(`${this.obsexe} --collection "emoTamaCamera"`);
+        exec(`${this.obsexe} --collection "emoTamaCamera" --minimize-to-tray`);
         process.chdir(this.herepath);
     }
     connect() {
@@ -26,8 +24,8 @@ class OBS {
             // this.sock.connect({ address: '172.27.224.1:4444' }) // for monado3's wsl
             .then(() => {
                 console.log('connected to obs!');
-                this.sock.send('SetCurrentSceneCollection', {
-                    'sc-name': 'emoTamaCamera'
+                this.sock.send('SetCurrentScene', {
+                    'scene-name': 'absent'
                 });
             })
             .catch(err => { // Promise convention dicates you have a catch on every chain.
@@ -43,14 +41,24 @@ class OBS {
         this.avatar = avatar;
     }
     change_emotion(emotion) {
-        var sname = this.avatar + '_' + emotion;
+        var sname;
+        if (emotion === 'absent') {
+            sname = 'absent';
+        } else {
+            sname = this.avatar + '_' + emotion;
+        }
         this.sock.send('SetCurrentScene', {
             'scene-name': sname
         });
         this.emotion = emotion;
     }
     change(avatar, emotion) {
-        var sname = avatar + '_' + emotion;
+        var sname;
+        if (emotion === 'absent') {
+            sname = 'absent';
+        } else {
+            sname = avatar + '_' + emotion;
+        }
         this.sock.send('SetCurrentScene', {
             'scene-name': sname
         });
@@ -62,4 +70,4 @@ class OBS {
     }
 }
 
-module.exports = OBS;
+module.exports = OBSBroker;
