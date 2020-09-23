@@ -1,6 +1,11 @@
 {
   "name": "emotamacamera",
   "version": "0.0.0",
+  "build":{
+    "files":[
+      "characters/"
+    ]
+  },
   "description": "Virtual Camera converting face expression to ball animation",
   "main": "index.js",
   "scripts": {

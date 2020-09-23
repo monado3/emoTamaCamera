@@ -19,12 +19,16 @@ body{
     padding-right: 3%;
 }
 #img-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     float:left;
     height:400px;
     width:55%;
     border:solid 5px  #51587b;
     background-color:  white;
     margin-right: 3%;
+    overflow: hidden;
 }
 
 #btn-list{
@@ -79,4 +83,9 @@ body{
 
 .btn-edge:hover:before, .btn-edge:hover:after {
   border-left-width: 25px;
+}
+
+#character{
+  height: 100%;
+  /* width: 100%; */
 }

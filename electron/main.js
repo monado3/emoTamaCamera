@@ -7,6 +7,7 @@ const bt4=document.getElementById('bt4');
 const bt5=document.getElementById('bt5');
 const bt_list=[bt1,bt2,bt3,bt4,bt5];
 const accesory=document.getElementById('accesory');
+const character=document.getElementById('character');
 
 function changeButtonColor(index){
     bt_list.forEach((bt,idx)=>{
@@ -17,24 +18,29 @@ function changeButtonColor(index){
 }
 
 bt1.addEventListener('click',()=>{
-    accesory.innerText='dog';
+    accesory.innerText='Normal';
+    character.src='characters/normal_neutral.gif';
     changeButtonColor(0);
 });
 bt2.addEventListener('click',()=>{
-    accesory.innerText='cat';
+    accesory.innerText='Cat';
+    character.src='characters/cat_neutral.gif';
     changeButtonColor(1);
 
 });
 bt3.addEventListener('click',()=>{
-    accesory.innerText='hat';
+    accesory.innerText='Glasses';
+    character.src='characters/glasses_neutral.gif';
     changeButtonColor(2);
 });
 bt4.addEventListener('click',()=>{
-    accesory.innerText='ribbon';
+    accesory.innerText='Ribbon';
+    character.src='characters/ribbon_neutral.gif';
     changeButtonColor(3);
 });
 bt5.addEventListener('click',()=>{
-    accesory.innerText='tail';
+    accesory.innerText='Tie';
+    character.src='characters/tie_neutral.gif';
     changeButtonColor(4);
 });
 navigator.mediaDevices.enumerateDevices()
