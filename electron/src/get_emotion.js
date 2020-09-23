@@ -30,11 +30,11 @@ class Emotion {
             // if detect people
             this.count = 0
             emotion = this.maxIndex(detections[0]["expressions"])
-            console.log(emotion)
+            // console.log(emotion)
 
             // threshold of emotion 
             if(detections[0]["expressions"][emotion] < 0.8) {
-                console.log("pre_emotion")
+                // console.log("pre_emotion")
                 emotion = this.pre_emotion
             }
 
@@ -44,12 +44,12 @@ class Emotion {
             this.count += 1
             if(this.count > 5) {
                 // the case that cannot detect more than 5 times in a row
-                console.log("absent")
+                // console.log("absent")
                 return "absent"
             }
-            console.log("pre_emotion")
+            // console.log("pre_emotion")
             emotion = this.pre_emotion
-            console.log(this.pre_emotion)
+            // console.log(this.pre_emotion)
         }
 
         return emotion
