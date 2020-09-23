@@ -44,7 +44,10 @@ class OBSBroker {
         var sname;
         if (emotion === 'absent') {
             sname = 'absent';
-        } else {
+        } else if (emotion === 'hand') {
+            sname = 'hand';
+        }
+        else {
             sname = this.avatar + '_' + emotion;
         }
         this.sock.send('SetCurrentScene', {
@@ -56,6 +59,8 @@ class OBSBroker {
         var sname;
         if (emotion === 'absent') {
             sname = 'absent';
+        } else if (emotion === 'hand') {
+            sname = 'hand';
         } else {
             sname = avatar + '_' + emotion;
         }
