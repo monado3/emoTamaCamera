@@ -1,3 +1,20 @@
+//const { TouchBarColorPicker } = require("electron");
+const electron = require("electron");
+
+//const remote = electron.remote;
+const obs_broker = require("./obs-broker.js");
+
+const obs_b = new obs_broker
+
+faceapi.env.monkeyPatch({
+    Canvas: HTMLCanvasElement,
+    Image: HTMLImageElement,
+    ImageData: ImageData,
+    Video: HTMLVideoElement,
+    createCanvasElement: () => document.createElement('canvas'),
+    createImageElement: () => document.createElement('img')
+})
+
 // From Here: coded by Kazuaki Oomori
 Promise.all([
     // faceapi.nets.tinyFaceDetector.loadFromUri('/models'), //light model for face detection
@@ -24,7 +41,12 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
     // From Here: coded by Kazuaki Oomori
 }).then(result => {
-
+    try{
+        obs_b.connect()
+    }catch(e){
+        setTimeout(obs_b.connect(),10000)
+    }
+    
     var video = document.getElementById("video");
     var cameraSelector = document.getElementById("camera-selector");
 
@@ -43,6 +65,8 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         var recog_emotion = new Emotion()
         var recog_hand = new HandPose()
 
+        obs_b.change_avatar(avatar)
+
         setInterval(async () => {
             //get face positions and probability of emotions
             const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
@@ -51,11 +75,16 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
             let emotion = recog_emotion.get_emotion(detections)
 
+            obs_b.change_emotion(emotion)
+
             const hands = await hand.estimateHands(video)
             if (hands) {
                 // check hand raised or not(true or false)
                 const raise = recog_hand.check_raise(hands)
                 console.log(raise)
+                if(raise){
+                    obs_b.change_emotion(hand)
+                }
             }
 
             canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
