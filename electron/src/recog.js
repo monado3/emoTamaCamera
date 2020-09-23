@@ -22,7 +22,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
     }
     // To Here: coded by Shohei Hisamitsu
 
-    // From Here: coded by Kazuaki Oomori
+    // From Here: coded by Kazuaki Oomori Shohei Hisamitsu
 }).then(result => {
 
     var video = document.getElementById("video");
@@ -34,16 +34,9 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         audio: false,//do not get audio
     });
     // Event for get emotion
-    video.addEventListener('play', () => {
-        const canvas = faceapi.createCanvasFromMedia(video)
-        document.body.append(canvas)
-        const displaySize = { width: video.width, height: video.height }
-        faceapi.matchDimensions(canvas, displaySize)
-
-        var recog_emotion = new Emotion()
-        var recog_hand = new HandPose()
-
-        setInterval(async () => {
+    var testTimer
+    function startTimer(displaySize,recog_emotion,recog_hand,canvas){
+        testTimer=setInterval(async()=>{
             //get face positions and probability of emotions
             const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
             const resizedDetections = faceapi.resizeResults(detections, displaySize)
@@ -61,14 +54,33 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
             canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
             faceapi.draw.drawDetections(canvas, resizedDetections)
             faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-        }, 1600)
+        },1600)
+    }
+
+    function stopTimer(){
+        //console.log("stop!")
+        clearInterval(testTimer);
+    }
+
+
+    video.addEventListener('play', () => {
+        const canvas = faceapi.createCanvasFromMedia(video)
+        document.body.append(canvas)
+        const displaySize = { width: video.width, height: video.height }
+        faceapi.matchDimensions(canvas, displaySize)
+
+        var recog_emotion = new Emotion()
+        var recog_hand = new HandPose()
+
+        stopTimer();
+        startTimer(displaySize,recog_emotion,recog_hand,canvas);
     })
 
     // リアルタイムに再生（ストリーミング）させるためにビデオタグに流し込む
     media.then((stream) => {
         video.srcObject = stream;
     });
-    // To Here: Coded by Kazuaki Oomori
+    // To Here: Coded by Kazuaki Oomori Shohei Hisamitsu
 
     // From Here: Coded by Yuma Ito
     cameraDeviceIds.forEach(camera => {
