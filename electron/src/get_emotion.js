@@ -1,3 +1,4 @@
+// author: Kazuaki Oomori
 Promise.all([
     // faceapi.nets.tinyFaceDetector.loadFromUri('/models'), //light model for face detection
     faceapi.nets.ssdMobilenetv1.loadFromUri('./models'), //heavy model for face detection
@@ -33,7 +34,7 @@ class Emotion {
             // console.log(emotion)
 
             // threshold of emotion 
-            if(detections[0]["expressions"][emotion] < 0.8) {
+            if (detections[0]["expressions"][emotion] < 0.8) {
                 // console.log("pre_emotion")
                 emotion = this.pre_emotion
             }
@@ -42,7 +43,7 @@ class Emotion {
         } else {
             // if don't detect people
             this.count += 1
-            if(this.count > 5) {
+            if (this.count > 5) {
                 // the case that cannot detect more than 5 times in a row
                 // console.log("absent")
                 return "absent"

@@ -1,37 +1,63 @@
-<!doctype html>
-<html lang="ja">
+<!-- mostly coded by Yuma Ito -->
+<!DOCTYPE html>
+<html>
 
 <head>
-    <!--meta http-equiv="Content-Security-Policy" content="script-src 'self'"-->
-    <meta charset="UTF-8">
-    <meta name="face expression recognition" content="face-api.js">
-    <title>face-api</title>
-  
-    <script src="face-api.min.js"></script>
-    <script src="https://unpkg.com/@tensorflow/tfjs-converter@1.7.0/dist/tf-converter.js"></script>
-    <script src="https://unpkg.com/@tensorflow-models/handpose@0.0.5/dist/handpose.js"></script>
-    <script src="https://unpkg.com/@tensorflow/tfjs-core@1.7.0/dist/tf-core.js"></script>
-    <script defer src="get_hand_raise.js"></script>
-    <script src="get_emotion.js"></script>
-    <script src="recog.js"></script>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <link href="style.css" rel="stylesheet">
 
-    <style>
-        body {
-          margin: 0;
-          padding: 0;
-          width: 100vw;
-          height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-    
-        canvas {
-          position: absolute;
-        }
-      </style>
+  <!--From Here: coded by Kazuaki Oomori-->
+  <script src="face-api.min.js"></script>
+  <script src="https://unpkg.com/@tensorflow/tfjs-converter@1.7.0/dist/tf-converter.js"></script>
+  <script src="https://unpkg.com/@tensorflow-models/handpose@0.0.5/dist/handpose.js"></script>
+  <script src="https://unpkg.com/@tensorflow/tfjs-core@1.7.0/dist/tf-core.js"></script>
+  <script defer src="get_hand_raise.js"></script>
+  <script src="get_emotion.js"></script>
+  <script src="recog.js"></script>
+  <!--To Here: coded by Kazuaki Oomori-->
+  <title>emoTamaCamera</title>
 </head>
+
 <body>
-    <video id="video" width="720" height="560" autoplay muted></video>
+  <div id="header">
+    <div id="message">Select your avatar and camera</div>
+    <div id="camera-selector-wrapper">
+      <select id="camera-selector"></select>
+    </div>
+  </div>
+  <div id="btn-wrapper">
+    <table id="btn-list">
+      <tr>
+        <td><a href="#" class="btn-edge" id="bt1">
+            <div>Normal</div>
+          </a></td>
+      </tr>
+      <tr>
+        <td><a href="#" class="btn-edge" id="bt2">
+            <div>Cat</div>
+          </a></td>
+      </tr>
+      <tr>
+        <td><a href="#" class="btn-edge" id="bt3">
+            <div>Glasses</div>
+          </a></td>
+      </tr>
+      <tr>
+        <td><a href="#" class="btn-edge" id="bt4">
+            <div>Ribbon</div>
+          </a></td>
+      </tr>
+      <tr>
+        <td><a href="#" class="btn-edge" id="bt5">
+            <div>Tie</div>
+          </a></td>
+      </tr>
+    </table>
+  </div>
+  <div id="img-wrapper"><img id="character" src="../resources/images/characters/normal_neutral.gif"></div>
+  <video id="video" width="720" height="560" autoplay muted></video>
+  <script src="gui.js"></script>
 </body>
+
 </html>

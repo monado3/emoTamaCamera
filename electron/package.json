@@ -2,7 +2,7 @@
   "name": "emotamacamera",
   "version": "0.0.0",
   "description": "Virtual Camera converting face expression to ball animation",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
