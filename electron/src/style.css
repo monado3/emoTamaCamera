@@ -3,11 +3,29 @@ body{
   font-family: Arial,sans-serif;
 }
 
-#accesory{
+#header{
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+#message{
+  width: 65%;
   font-size: 30px;
   line-height: 30px;
   text-align: center;
   color: #51587b;
+}
+
+#camera-selector-wrapper{
+  width: 35%;
+}
+
+#camera-selector{
+  display: block;
+  width: 80%;
+  font-size: 20px;
+  margin: 0 auto;
 }
 
 #btn-wrapper{
@@ -85,7 +103,12 @@ body{
   border-left-width: 25px;
 }
 
+#bt1{
+  background-color:rgb(187, 164, 64);
+}
+
 #character{
   height: 100%;
-  /* width: 100%; */
 }
+
+/* coded by Yuma Ito */

@@ -6,7 +6,6 @@ const bt3=document.getElementById('bt3');
 const bt4=document.getElementById('bt4');
 const bt5=document.getElementById('bt5');
 const bt_list=[bt1,bt2,bt3,bt4,bt5];
-const accesory=document.getElementById('accesory');
 const character=document.getElementById('character');
 
 function changeButtonColor(index){
@@ -18,42 +17,39 @@ function changeButtonColor(index){
 }
 
 bt1.addEventListener('click',()=>{
-    accesory.innerText='Normal';
     character.src='characters/normal_neutral.gif';
     changeButtonColor(0);
 });
 bt2.addEventListener('click',()=>{
-    accesory.innerText='Cat';
     character.src='characters/cat_neutral.gif';
     changeButtonColor(1);
 
 });
 bt3.addEventListener('click',()=>{
-    accesory.innerText='Glasses';
     character.src='characters/glasses_neutral.gif';
     changeButtonColor(2);
 });
 bt4.addEventListener('click',()=>{
-    accesory.innerText='Ribbon';
     character.src='characters/ribbon_neutral.gif';
     changeButtonColor(3);
 });
 bt5.addEventListener('click',()=>{
-    accesory.innerText='Tie';
     character.src='characters/tie_neutral.gif';
     changeButtonColor(4);
 });
-navigator.mediaDevices.enumerateDevices()
-.then(function(devices) {
-    console.log(devices);
-    devices.forEach(function(device) {
-      console.log(device.kind + ": " + device.label +
-                  " id = " + device.deviceId);
-    });
-});
+// navigator.mediaDevices.enumerateDevices()
+// .then(function(devices) {
+//     console.log(devices);
+//     devices.forEach(function(device) {
+//       console.log(device.kind + ": " + device.label +
+//                   " id = " + device.deviceId);
+//     });
+// });
 
-console.log(navigator.mediaDevices);
-navigator.mediaDevices.getUserMedia()
-.then(function(stream) {
-    console.log(stream);
-});
+// console.log(navigator.mediaDevices);
+// navigator.mediaDevices.getUserMedia()
+// .then(function(stream) {
+//     console.log(stream);
+// });
+
+//coded by Yuma Ito
