@@ -34,7 +34,7 @@ class OBSSetUpper {
         this.sc = sc;
     }
     install() {
-        this.convert();
+        this.#convert();
 
         fs.writeFileSync(this.scpath, JSON.stringify(this.sc, null, "\t"));
 
