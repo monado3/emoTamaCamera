@@ -30,6 +30,7 @@
     "face-api.js": "^0.22.2"
   },
   "dependencies": {
+    "glob": "^7.1.6",
     "obs-websocket-js": "^4.0.1"
   }
 }
