@@ -1,17 +1,10 @@
 {
   "name": "emotamacamera",
   "version": "0.0.0",
-  "build":{
-    "files":[
-      "characters/"
-    ]
-  },
   "description": "Virtual Camera converting face expression to ball animation",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
-    
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -37,6 +30,7 @@
     "face-api.js": "^0.22.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "canvas": "^2.6.1",
+    "node-webcam": "^0.6.4"
   }
 }
