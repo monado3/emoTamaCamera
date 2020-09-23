@@ -9,9 +9,24 @@ Promise.all([
 
 var video = document.getElementById("video");
 
+const cameraDeviceIds = [/* { deviceId, label } */];
+
+navigator.mediaDevices.enumerateDevices().then(function(mediaDevices) {
+    for (let len = mediaDevices.length, i = 0; i < len; i++) {
+        const item = mediaDevices[i];
+        // NOTE: カメラデバイスの場合、 kind プロパティには "videoinput" が入っている:
+        if (item.kind === "videoinput") {
+        const deviceId = item.deviceId;
+        const label = item.label;
+        // NOTE: ここでデバイスID（とラベル）を適当な変数に保存しておく
+        cameraDeviceIds.push({ deviceId, label });
+        }
+    }
+    console.log("cameras:"+JSON.stringify(cameraDeviceIds));
+})
 
 var media = navigator.mediaDevices.getUserMedia({
-    video: true,//get video
+    video: { deviceId: cameraDeviceIds[3]},//get video
     audio: false,//do not get audio
 });
 
