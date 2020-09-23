@@ -30,6 +30,8 @@
     "face-api.js": "^0.22.2"
   },
   "dependencies": {
+    "canvas": "^2.6.1",
+    "node-webcam": "^0.6.4"
     "glob": "^7.1.6",
     "obs-websocket-js": "^4.0.1"
   }
