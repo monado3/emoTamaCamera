@@ -3,6 +3,17 @@
 const { app, BrowserWindow } = require('electron')
 
 const path = require('path')
+const obs_setupper = require('./obs-setupper.js')
+const obs_broker = require('./obs-broker.js')
+
+const obs_b = new obs_broker
+const obs_s = new obs_setupper
+
+
+if(!obs_setupper.isInstalled){
+  obs_s.install()
+}
+obs_b.launch()
 
 function createWindow() {
   // Create the browser window.
@@ -10,7 +21,8 @@ function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
-      worldSafeExecuteJavaScript: true
+      worldSafeExecuteJavaScript: true,
+      nodeIntegration: true
     }
   })
 
