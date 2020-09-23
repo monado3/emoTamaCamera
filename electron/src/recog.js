@@ -35,19 +35,28 @@ navigator.mediaDevices.enumerateDevices().then(function(mediaDevices) {
         const displaySize = { width: video.width, height: video.height }
         faceapi.matchDimensions(canvas, displaySize)
     
-        recog_emotion = new Emotion()
+        var recog_emotion = new Emotion()
+        var recog_hand = new HandPose()
     
         setInterval(async () => {
             //get face positions and probability of emotions
             const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
             const resizedDetections = faceapi.resizeResults(detections, displaySize)
+            const hand = await handpose.load()
     
             let emotion = recog_emotion.get_emotion(detections)
+            
+            const hands = await hand.estimateHands(video)
+            if(hands) {
+                // check hand raised or not(true or false)
+                const raise = recog_hand.check_raise(hands)
+                console.log(raise)
+            }
     
             canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
             faceapi.draw.drawDetections(canvas, resizedDetections)
             faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-        }, 1000)
+        }, 1600)
     })
     
     // リアルタイムに再生（ストリーミング）させるためにビデオタグに流し込む
