@@ -1,8 +1,10 @@
 // author: Kazuaki Oomori
+const faceapi = require("face-api.js")
+
 Promise.all([
     // faceapi.nets.tinyFaceDetector.loadFromUri('/models'), //light model for face detection
-    faceapi.nets.ssdMobilenetv1.loadFromUri('./models'), //heavy model for face detection
-    faceapi.nets.faceExpressionNet.loadFromUri('./models')// for emotion recognition
+    faceapi.nets.ssdMobilenetv1.loadFromUri('../resources/models'), //heavy model for face detection
+    faceapi.nets.faceExpressionNet.loadFromUri('../resources/models')// for emotion recognition
 ])
 
 
