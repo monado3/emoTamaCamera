@@ -22,14 +22,6 @@ faceapi.env.monkeyPatch({
     createImageElement: () => document.createElement('img')
 })
 
-// From Here: coded by Kazuaki Oomori
-Promise.all([
-    // faceapi.nets.tinyFaceDetector.loadFromUri('/models'), //light model for face detection
-    faceapi.nets.ssdMobilenetv1.loadFromUri('../resources/models'), //heavy model for face detection
-    faceapi.nets.faceExpressionNet.loadFromUri('../resources/models')// for emotion recognition
-])
-// To Here: coded by Kazuaki Oomori
-
 // From Here: coded by Shohei Hisamitsu
 const cameraDeviceIds = [/* { deviceId, label } */];
 

@@ -253,7 +253,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/Users/monad/Downloads/hand.gif"
+                "file": "hand.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -339,7 +339,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_surprise.gif"
+                "file": "normal_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -439,7 +439,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_fear.gif"
+                "file": "normal_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -464,7 +464,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_disgust.gif"
+                "file": "normal_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -941,7 +941,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_surprise.gif"
+                "file": "tie_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1041,7 +1041,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_fear.gif"
+                "file": "tie_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1066,7 +1066,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_disgust.gif"
+                "file": "tie_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1116,7 +1116,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_surprise.gif"
+                "file": "ribbon_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1216,7 +1216,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_fear.gif"
+                "file": "ribbon_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1241,7 +1241,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_disgust.gif"
+                "file": "ribbon_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1291,7 +1291,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_surprise.gif"
+                "file": "glasses_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1391,7 +1391,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_fear.gif"
+                "file": "glasses_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1416,7 +1416,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_disgust.gif"
+                "file": "glasses_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1466,7 +1466,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_surprise.gif"
+                "file": "cat_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1566,7 +1566,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_fear.gif"
+                "file": "cat_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1591,7 +1591,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_disgust.gif"
+                "file": "cat_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",

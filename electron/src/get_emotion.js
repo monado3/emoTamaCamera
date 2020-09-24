@@ -10,7 +10,7 @@ class Emotion {
     constructor() {
         // count: the number of times when there are no people
         this.count = 0
-        this.pre_emotion = 'neural'
+        this.pre_emotion = 'neutral'
     }
     // get the most probable key
     maxIndex(expressions) {
@@ -33,7 +33,7 @@ class Emotion {
             emotion = this.maxIndex(detections[0]["expressions"])
             // console.log(emotion)
 
-            // threshold of emotion 
+            // threshold of emotion
             if (detections[0]["expressions"][emotion] < 0.8) {
                 // console.log("pre_emotion")
                 emotion = this.pre_emotion
