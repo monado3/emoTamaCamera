@@ -28,8 +28,9 @@ OBS Studio->Tool->VirtualCam->AutoStart(check)
 
 # Usage
 ```bash
-~\TeamE\electron
+cd \TeamE\electron
 npm install
-cd electron/src
+cd src
 ..\node_modules\.bin\electron .\main.js
+```
 
