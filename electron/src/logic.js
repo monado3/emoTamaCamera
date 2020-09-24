@@ -67,6 +67,10 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
             let emotion = recog_emotion.get_emotion(detections)
 
+            if(!emotion){
+                emotion = "absent"
+            }
+
             obs_b.change(avatar, emotion)
 
             const hands = await hand.estimateHands(video)

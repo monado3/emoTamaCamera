@@ -30,9 +30,12 @@
     "face-api.js": "^0.22.2"
   },
   "dependencies": {
+    "@tensorflow-models/handpose": "0.0.5",
+    "@tensorflow/tfjs-converter": "^1.7.0",
+    "@tensorflow/tfjs-core": "^1.7.0",
     "canvas": "^2.6.1",
-    "node-webcam": "^0.6.4",
     "glob": "^7.1.6",
+    "node-webcam": "^0.6.4",
     "obs-websocket-js": "^4.0.1"
   }
 }
