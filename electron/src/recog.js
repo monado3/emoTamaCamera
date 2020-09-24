@@ -1,5 +1,10 @@
 //const { TouchBarColorPicker } = require("electron");
 const electron = require("electron");
+require("face-api.js")
+const handpose = require("@tensorflow-models/handpose")
+const tfjs_core = require("@tensorflow/tfjs-core")
+const tfjs_converter = require("@tensorflow/tfjs-converter")
+
 
 //const remote = electron.remote;
 const obs_broker = require("./obs-broker.js");
