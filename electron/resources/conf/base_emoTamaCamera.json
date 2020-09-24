@@ -59,8 +59,8 @@
         "versioned_id": "wasapi_output_capture",
         "volume": 1.0
     },
-    "current_program_scene": "cat_fearful",
-    "current_scene": "cat_fearful",
+    "current_program_scene": "tie_angry",
+    "current_scene": "tie_angry",
     "current_transition": "Fade",
     "groups": [],
     "modules": {
@@ -128,7 +128,7 @@
             "name": "hand"
         },
         {
-            "name": "cat_anger"
+            "name": "cat_angry"
         },
         {
             "name": "cat_disgusted"
@@ -149,7 +149,7 @@
             "name": "cat_surprised"
         },
         {
-            "name": "glasses_anger"
+            "name": "glasses_angry"
         },
         {
             "name": "glasses_disgusted"
@@ -170,7 +170,7 @@
             "name": "glasses_surprised"
         },
         {
-            "name": "normal_anger"
+            "name": "normal_angry"
         },
         {
             "name": "normal_disgusted"
@@ -191,7 +191,7 @@
             "name": "normal_surprised"
         },
         {
-            "name": "ribbon_anger"
+            "name": "ribbon_angry"
         },
         {
             "name": "ribbon_disgusted"
@@ -212,7 +212,7 @@
             "name": "ribbon_surprised"
         },
         {
-            "name": "tie_anger"
+            "name": "tie_angry"
         },
         {
             "name": "tie_disgusted"
@@ -339,7 +339,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_surprised.gif"
+                "file": "normal_surprise.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -439,7 +439,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_fearful.gif"
+                "file": "normal_fear.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -464,7 +464,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_disgusted.gif"
+                "file": "normal_disgust.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -481,7 +481,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "normal_anger_gif",
+            "name": "normal_angry_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -489,7 +489,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_anger.gif"
+                "file": "normal_angry.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -869,14 +869,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.normal_anger_gif": [],
-                "libobs.show_scene_item.normal_anger_gif": []
+                "libobs.hide_scene_item.normal_angry_gif": [],
+                "libobs.show_scene_item.normal_angry_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "normal_anger",
+            "name": "normal_angry",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -902,7 +902,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "normal_anger_gif",
+                        "name": "normal_angry_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -941,7 +941,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_surprised.gif"
+                "file": "tie_surprise.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1041,7 +1041,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_fearful.gif"
+                "file": "tie_fear.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1066,7 +1066,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_disgusted.gif"
+                "file": "tie_disgust.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1083,7 +1083,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "tie_anger_gif",
+            "name": "tie_angry_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1091,7 +1091,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_anger.gif"
+                "file": "tie_angry.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1116,7 +1116,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_surprised.gif"
+                "file": "ribbon_surprise.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1216,7 +1216,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_fearful.gif"
+                "file": "ribbon_fear.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1241,7 +1241,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_disgusted.gif"
+                "file": "ribbon_disgust.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1258,7 +1258,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "ribbon_anger_gif",
+            "name": "ribbon_angry_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1266,7 +1266,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_anger.gif"
+                "file": "ribbon_angry.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1291,7 +1291,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_surprised.gif"
+                "file": "glasses_surprise.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1391,7 +1391,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_fearful.gif"
+                "file": "glasses_fear.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1416,7 +1416,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_disgusted.gif"
+                "file": "glasses_disgust.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1433,7 +1433,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "glasses_anger_gif",
+            "name": "glasses_angry_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1441,7 +1441,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_anger.gif"
+                "file": "glasses_angry.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1466,7 +1466,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_surprised.gif"
+                "file": "cat_surprise.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1566,7 +1566,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_fearful.gif"
+                "file": "cat_fear.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1591,7 +1591,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_disgusted.gif"
+                "file": "cat_disgust.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1608,7 +1608,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "cat_anger_gif",
+            "name": "cat_angry_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1616,7 +1616,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_anger.gif"
+                "file": "cat_angry.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -2021,14 +2021,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.tie_anger_gif": [],
-                "libobs.show_scene_item.tie_anger_gif": []
+                "libobs.hide_scene_item.tie_angry_gif": [],
+                "libobs.show_scene_item.tie_angry_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "tie_anger",
+            "name": "tie_angry",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2054,7 +2054,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "tie_anger_gif",
+                        "name": "tie_angry_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -2448,14 +2448,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.ribbon_anger_gif": [],
-                "libobs.show_scene_item.ribbon_anger_gif": []
+                "libobs.hide_scene_item.ribbon_angry_gif": [],
+                "libobs.show_scene_item.ribbon_angry_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "ribbon_anger",
+            "name": "ribbon_angry",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2481,7 +2481,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "ribbon_anger_gif",
+                        "name": "ribbon_angry_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -2875,14 +2875,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.glasses_anger_gif": [],
-                "libobs.show_scene_item.glasses_anger_gif": []
+                "libobs.hide_scene_item.glasses_angry_gif": [],
+                "libobs.show_scene_item.glasses_angry_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "glasses_anger",
+            "name": "glasses_angry",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2908,7 +2908,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "glasses_anger_gif",
+                        "name": "glasses_angry_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -3302,14 +3302,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.cat_anger_gif": [],
-                "libobs.show_scene_item.cat_anger_gif": []
+                "libobs.hide_scene_item.cat_angry_gif": [],
+                "libobs.show_scene_item.cat_angry_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "cat_anger",
+            "name": "cat_angry",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -3335,7 +3335,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "cat_anger_gif",
+                        "name": "cat_angry_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
