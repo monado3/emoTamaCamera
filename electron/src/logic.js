@@ -10,13 +10,12 @@ const tfjs_converter = require("@tensorflow/tfjs-converter")
 const obs_broker = require("./obs-broker.js");
 const obs_b = new obs_broker
 
+// From Here: coded by Shohei Hisamitsu
+//無駄にループしてビジー状態で疑似スリープする。よくないかもしれない。
 function sleep(waitMsec) {
     var startMsec = new Date();
-
-    // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
     while (new Date() - startMsec < waitMsec);
   }
-
 
 faceapi.env.monkeyPatch({
     Canvas: HTMLCanvasElement,
@@ -27,13 +26,12 @@ faceapi.env.monkeyPatch({
     createImageElement: () => document.createElement('img')
 })
 
-// From Here: coded by Shohei Hisamitsu
 const cameraDeviceIds = [/* { deviceId, label } */];
 
 navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
     for (let len = mediaDevices.length, i = 0; i < len; i++) {
         const item = mediaDevices[i];
-        // カメラデバイスの場合、 kind プロパティには "videoinput" が入っている:
+        // カメラデバイスの場合、 kind プロパティには "videoinput" が入っている。
         if (item.kind === "videoinput") {
             const deviceId = item.deviceId;
             const label = item.label;
@@ -57,56 +55,64 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         audio: false,//do not get audio
     });
     // Event for get emotion
-    var testTimer
-    function startTimer(displaySize, recog_emotion, recog_hand, canvas) {
-        testTimer = setInterval(async () => {
-            //get face positions and probability of emotions
-            const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
-            const resizedDetections = faceapi.resizeResults(detections, displaySize)
-            const hand = await handpose.load()
 
-            let emotion = recog_emotion.get_emotion(detections)
-
-            if(!emotion){
-                emotion = "absent"
-            }
-
-            obs_b.change(avatar, emotion)
-
-            const hands = await hand.estimateHands(video)
-            if (hands) {
-                // check hand raised or not(true or false)
-                const raise = recog_hand.check_raise(hands)
-                console.log(raise)
-                if (raise) {
-                    obs_b.change_emotion("hand")
+    handpose.load().then(result=>{
+        const hand = result
+        var testTimer
+        function startTimer(displaySize, recog_emotion, recog_hand, canvas, hand) {
+            testTimer = setInterval(async () => {
+                //get face positions and probability of emotions
+                const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
+                const resizedDetections = faceapi.resizeResults(detections, displaySize)
+                
+    
+                let emotion = recog_emotion.get_emotion(detections)
+    
+                if(!emotion){
+                    emotion = "absent"
                 }
-            }
+    
+                obs_b.change(avatar, emotion)
+    
+                const hands = await hand.estimateHands(video)
+                if (hands) {
+                    // check hand raised or not(true or false)
+                    const raise = recog_hand.check_raise(hands)
+                    console.log(raise)
+                    if (raise) {
+                        obs_b.change_emotion("hand")
+                    }
+                }
+    
+                canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
+                //faceapi.draw.drawDetections(canvas, resizedDetections)
+                //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+            }, 1600)
+        }
+    
+        function stopTimer() {
+            //console.log("stop!")
+            clearInterval(testTimer);
+        }
+    
+        var recog_emotion = new Emotion()
+        var recog_hand = new HandPose()
+    
+        video.addEventListener('play', () => {
 
-            canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
-            // faceapi.draw.drawDetections(canvas, resizedDetections)
-            // faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-        }, 1600)
-    }
-
-    function stopTimer() {
-        //console.log("stop!")
-        clearInterval(testTimer);
-    }
-
-    var recog_emotion = new Emotion()
-    var recog_hand = new HandPose()
-
-    video.addEventListener('play', () => {
-        const canvas = faceapi.createCanvasFromMedia(video)
-        document.body.append(canvas)
-        const displaySize = { width: video.width, height: video.height }
-        faceapi.matchDimensions(canvas, displaySize)
-
-
-        stopTimer();
-        startTimer(displaySize, recog_emotion, recog_hand, canvas);
+            const canvas = faceapi.createCanvasFromMedia(video)
+            document.body.append(canvas)
+            const displaySize = { width: video.width, height: video.height }
+            faceapi.matchDimensions(canvas, displaySize)
+    
+            //console.log("startTimer")
+            stopTimer();
+            startTimer(displaySize, recog_emotion, recog_hand, canvas, hand);
+            const loading = document.getElementById('loading');
+            loading.classList.add('loaded');
+        })
     })
+    
 
     // リアルタイムに再生（ストリーミング）させるためにビデオタグに流し込む
     media.then((stream) => {
