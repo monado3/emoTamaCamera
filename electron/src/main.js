@@ -10,7 +10,7 @@ const obs_b = new obs_broker
 const obs_s = new obs_setupper
 
 
-if(!obs_setupper.isInstalled){
+if(!obs_setupper.isInstalled()){
   obs_s.install()
 }
 obs_b.launch()
@@ -27,10 +27,10 @@ function createWindow() {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('src/index.html')
+  mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  //mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

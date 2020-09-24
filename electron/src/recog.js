@@ -41,12 +41,22 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
     // From Here: coded by Kazuaki Oomori
 }).then(result => {
+    /*
     try{
         obs_b.connect()
     }catch(e){
-        setTimeout(obs_b.connect(),10000)
-    }
-    
+        setTimeout(obs_b.connect(),20000)
+    }*/
+
+    function sleep(waitMsec) {
+        var startMsec = new Date();
+       
+        // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+        while (new Date() - startMsec < waitMsec);
+      }
+       
+    sleep(10000);
+    obs_b.connect();
     var video = document.getElementById("video");
     var cameraSelector = document.getElementById("camera-selector");
 
@@ -65,7 +75,6 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         var recog_emotion = new Emotion()
         var recog_hand = new HandPose()
 
-        obs_b.change_avatar(avatar)
 
         setInterval(async () => {
             //get face positions and probability of emotions
@@ -75,6 +84,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
             let emotion = recog_emotion.get_emotion(detections)
 
+            obs_b.change_avatar(avatar)
             obs_b.change_emotion(emotion)
 
             const hands = await hand.estimateHands(video)
@@ -83,14 +93,14 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
                 const raise = recog_hand.check_raise(hands)
                 console.log(raise)
                 if(raise){
-                    obs_b.change_emotion(hand)
+                    obs_b.change_emotion("hand")
                 }
             }
 
             canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
-            faceapi.draw.drawDetections(canvas, resizedDetections)
-            faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-        }, 1600)
+            //faceapi.draw.drawDetections(canvas, resizedDetections)
+            //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+        }, 1500)
     })
 
     // リアルタイムに再生（ストリーミング）させるためにビデオタグに流し込む
