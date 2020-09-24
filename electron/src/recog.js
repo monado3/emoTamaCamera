@@ -26,6 +26,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 }).then(result => {
 
     var video = document.getElementById("video");
+    var video_original=document.getElementById("video-original");
     var cameraSelector = document.getElementById("camera-selector");
 
 
@@ -35,8 +36,20 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
     });
     // Event for get emotion
     video.addEventListener('play', () => {
+        // const video=document.getElementById('video')
+        const video_bbox=document.getElementById('video-bbox')
+        video_bbox.removeChild(document.getElementById('face-detector'))
         const canvas = faceapi.createCanvasFromMedia(video)
-        document.body.append(canvas)
+        canvas.id='face-detector'
+        canvas.style.position='absolute'
+        canvas.style.zIndex=1;
+        canvas.style.left='0px'
+        canvas.style.top='0px'
+        canvas.style.height=video.height+'px'
+        canvas.style.width=video.width+'px'
+        video_bbox.appendChild(canvas);
+        console.log(video_bbox);
+        // document.body.append(canvas);
         const displaySize = { width: video.width, height: video.height }
         faceapi.matchDimensions(canvas, displaySize)
 
@@ -48,6 +61,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
             const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
             const resizedDetections = faceapi.resizeResults(detections, displaySize)
             const hand = await handpose.load()
+            console.log('canvasis'+canvas)
 
             let emotion = recog_emotion.get_emotion(detections)
 
@@ -60,12 +74,13 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
             canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
             faceapi.draw.drawDetections(canvas, resizedDetections)
-            faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+            //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
         }, 1600)
     })
 
     // リアルタイムに再生（ストリーミング）させるためにビデオタグに流し込む
     media.then((stream) => {
+        video_original.srcObject=stream;
         video.srcObject = stream;
     });
     // To Here: Coded by Kazuaki Oomori
@@ -84,6 +99,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
             video: { deviceId: cameraid },//get video
             audio: false,//do not get audio
         }).then((stream) => {
+            video_original.srcObject=stream;
             video.srcObject = stream;
         });
     })

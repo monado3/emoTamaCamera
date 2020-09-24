@@ -111,4 +111,19 @@ body{
   height: 100%;
 }
 
+#video-original{
+  float: left;
+}
+
+#video-bbox{
+  float: left;
+  position: relative;
+}
+
+#video{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
 /* coded by Yuma Ito */
