@@ -59,8 +59,8 @@
         "versioned_id": "wasapi_output_capture",
         "volume": 1.0
     },
-    "current_program_scene": "hand",
-    "current_scene": "hand",
+    "current_program_scene": "cat_fearful",
+    "current_scene": "cat_fearful",
     "current_transition": "Fade",
     "groups": [],
     "modules": {
@@ -131,10 +131,10 @@
             "name": "cat_anger"
         },
         {
-            "name": "cat_disgust"
+            "name": "cat_disgusted"
         },
         {
-            "name": "cat_fear"
+            "name": "cat_fearful"
         },
         {
             "name": "cat_happy"
@@ -146,16 +146,16 @@
             "name": "cat_sad"
         },
         {
-            "name": "cat_surprise"
+            "name": "cat_surprised"
         },
         {
             "name": "glasses_anger"
         },
         {
-            "name": "glasses_disgust"
+            "name": "glasses_disgusted"
         },
         {
-            "name": "glasses_fear"
+            "name": "glasses_fearful"
         },
         {
             "name": "glasses_happy"
@@ -167,16 +167,16 @@
             "name": "glassses_sad"
         },
         {
-            "name": "glasses_surprise"
+            "name": "glasses_surprised"
         },
         {
             "name": "normal_anger"
         },
         {
-            "name": "normal_disgust"
+            "name": "normal_disgusted"
         },
         {
-            "name": "normal_fear"
+            "name": "normal_fearful"
         },
         {
             "name": "normal_happy"
@@ -188,16 +188,16 @@
             "name": "normal_sad"
         },
         {
-            "name": "normal_surprise"
+            "name": "normal_surprised"
         },
         {
             "name": "ribbon_anger"
         },
         {
-            "name": "ribbon_disgust"
+            "name": "ribbon_disgusted"
         },
         {
-            "name": "ribbon_fear"
+            "name": "ribbon_fearful"
         },
         {
             "name": "ribbon_happy"
@@ -209,16 +209,16 @@
             "name": "ribbon_sad"
         },
         {
-            "name": "ribbon_surprise"
+            "name": "ribbon_surprised"
         },
         {
             "name": "tie_anger"
         },
         {
-            "name": "tie_disgust"
+            "name": "tie_disgusted"
         },
         {
-            "name": "tie_fear"
+            "name": "tie_fearful"
         },
         {
             "name": "tie_happy"
@@ -230,7 +230,7 @@
             "name": "tie_sad"
         },
         {
-            "name": "tie_surprise"
+            "name": "tie_surprised"
         }
     ],
     "sources": [
@@ -253,7 +253,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "hand.gif"
+                "file": "C:/Users/monad/Downloads/hand.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -331,7 +331,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "normal_surprise_gif",
+            "name": "normal_surprised_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -339,7 +339,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_surprise.gif"
+                "file": "normal_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -431,7 +431,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "normal_fear_gif",
+            "name": "normal_fearful_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -439,7 +439,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_fear.gif"
+                "file": "normal_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -456,7 +456,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "normal_disgust_gif",
+            "name": "normal_disgusted_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -464,7 +464,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "normal_disgust.gif"
+                "file": "normal_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -503,14 +503,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.normal_surprise_gif": [],
-                "libobs.show_scene_item.normal_surprise_gif": []
+                "libobs.hide_scene_item.normal_surprised_gif": [],
+                "libobs.show_scene_item.normal_surprised_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "normal_surprise",
+            "name": "normal_surprised",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -536,7 +536,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "normal_surprise_gif",
+                        "name": "normal_surprised_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -747,14 +747,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.normal_fear_gif": [],
-                "libobs.show_scene_item.normal_fear_gif": []
+                "libobs.hide_scene_item.normal_fearful_gif": [],
+                "libobs.show_scene_item.normal_fearful_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "normal_fear",
+            "name": "normal_fearful",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -780,7 +780,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "normal_fear_gif",
+                        "name": "normal_fearful_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -808,14 +808,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.normal_disgust_gif": [],
-                "libobs.show_scene_item.normal_disgust_gif": []
+                "libobs.hide_scene_item.normal_disgusted_gif": [],
+                "libobs.show_scene_item.normal_disgusted_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "normal_disgust",
+            "name": "normal_disgusted",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -841,7 +841,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "normal_disgust_gif",
+                        "name": "normal_disgusted_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -933,7 +933,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "tie_surprise_gif",
+            "name": "tie_surprised_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -941,7 +941,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_surprise.gif"
+                "file": "tie_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1033,7 +1033,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "tie_fear_gif",
+            "name": "tie_fearful_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1041,7 +1041,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_fear.gif"
+                "file": "tie_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1058,7 +1058,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "tie_disgust_gif",
+            "name": "tie_disgusted_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1066,7 +1066,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "tie_disgust.gif"
+                "file": "tie_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1108,7 +1108,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "ribbon_surprise_gif",
+            "name": "ribbon_surprised_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1116,7 +1116,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_surprise.gif"
+                "file": "ribbon_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1208,7 +1208,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "ribbon_fear_gif",
+            "name": "ribbon_fearful_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1216,7 +1216,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_fear.gif"
+                "file": "ribbon_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1233,7 +1233,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "ribbon_disgust_gif",
+            "name": "ribbon_disgusted_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1241,7 +1241,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "ribbon_disgust.gif"
+                "file": "ribbon_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1283,7 +1283,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "glasses_surprise_gif",
+            "name": "glasses_surprised_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1291,7 +1291,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_surprise.gif"
+                "file": "glasses_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1383,7 +1383,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "glasses_fear_gif",
+            "name": "glasses_fearful_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1391,7 +1391,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_fear.gif"
+                "file": "glasses_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1408,7 +1408,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "glasses_disgust_gif",
+            "name": "glasses_disgusted_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1416,7 +1416,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "glasses_disgust.gif"
+                "file": "glasses_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1458,7 +1458,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "cat_surprise_gif",
+            "name": "cat_surprised_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1466,7 +1466,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_surprise.gif"
+                "file": "cat_surprised.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1558,7 +1558,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "cat_fear_gif",
+            "name": "cat_fearful_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1566,7 +1566,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_fear.gif"
+                "file": "cat_fearful.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1583,7 +1583,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "cat_disgust_gif",
+            "name": "cat_disgusted_gif",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1591,7 +1591,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "cat_disgust.gif"
+                "file": "cat_disgusted.gif"
             },
             "sync": 0,
             "versioned_id": "image_source",
@@ -1655,14 +1655,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.tie_surprise_gif": [],
-                "libobs.show_scene_item.tie_surprise_gif": []
+                "libobs.hide_scene_item.tie_surprised_gif": [],
+                "libobs.show_scene_item.tie_surprised_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "tie_surprise",
+            "name": "tie_surprised",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1688,7 +1688,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "tie_surprise_gif",
+                        "name": "tie_surprised_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -1899,14 +1899,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.tie_fear_gif": [],
-                "libobs.show_scene_item.tie_fear_gif": []
+                "libobs.hide_scene_item.tie_fearful_gif": [],
+                "libobs.show_scene_item.tie_fearful_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "tie_fear",
+            "name": "tie_fearful",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1932,7 +1932,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "tie_fear_gif",
+                        "name": "tie_fearful_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -1960,14 +1960,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.tie_disgust_gif": [],
-                "libobs.show_scene_item.tie_disgust_gif": []
+                "libobs.hide_scene_item.tie_disgusted_gif": [],
+                "libobs.show_scene_item.tie_disgusted_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "tie_disgust",
+            "name": "tie_disgusted",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -1993,7 +1993,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "tie_disgust_gif",
+                        "name": "tie_disgusted_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -2082,14 +2082,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.ribbon_surprise_gif": [],
-                "libobs.show_scene_item.ribbon_surprise_gif": []
+                "libobs.hide_scene_item.ribbon_surprised_gif": [],
+                "libobs.show_scene_item.ribbon_surprised_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "ribbon_surprise",
+            "name": "ribbon_surprised",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2115,7 +2115,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "ribbon_surprise_gif",
+                        "name": "ribbon_surprised_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -2326,14 +2326,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.ribbon_fear_gif": [],
-                "libobs.show_scene_item.ribbon_fear_gif": []
+                "libobs.hide_scene_item.ribbon_fearful_gif": [],
+                "libobs.show_scene_item.ribbon_fearful_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "ribbon_fear",
+            "name": "ribbon_fearful",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2359,7 +2359,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "ribbon_fear_gif",
+                        "name": "ribbon_fearful_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -2387,14 +2387,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.ribbon_disgust_gif": [],
-                "libobs.show_scene_item.ribbon_disgust_gif": []
+                "libobs.hide_scene_item.ribbon_disgusted_gif": [],
+                "libobs.show_scene_item.ribbon_disgusted_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "ribbon_disgust",
+            "name": "ribbon_disgusted",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2420,7 +2420,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "ribbon_disgust_gif",
+                        "name": "ribbon_disgusted_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -2509,14 +2509,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.glasses_surprise_gif": [],
-                "libobs.show_scene_item.glasses_surprise_gif": []
+                "libobs.hide_scene_item.glasses_surprised_gif": [],
+                "libobs.show_scene_item.glasses_surprised_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "glasses_surprise",
+            "name": "glasses_surprised",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2542,7 +2542,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "glasses_surprise_gif",
+                        "name": "glasses_surprised_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -2753,14 +2753,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.glasses_fear_gif": [],
-                "libobs.show_scene_item.glasses_fear_gif": []
+                "libobs.hide_scene_item.glasses_fearful_gif": [],
+                "libobs.show_scene_item.glasses_fearful_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "glasses_fear",
+            "name": "glasses_fearful",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2786,7 +2786,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "glasses_fear_gif",
+                        "name": "glasses_fearful_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -2814,14 +2814,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.glasses_disgust_gif": [],
-                "libobs.show_scene_item.glasses_disgust_gif": []
+                "libobs.hide_scene_item.glasses_disgusted_gif": [],
+                "libobs.show_scene_item.glasses_disgusted_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "glasses_disgust",
+            "name": "glasses_disgusted",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2847,7 +2847,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "glasses_disgust_gif",
+                        "name": "glasses_disgusted_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -2936,14 +2936,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.cat_surprise_gif": [],
-                "libobs.show_scene_item.cat_surprise_gif": []
+                "libobs.hide_scene_item.cat_surprised_gif": [],
+                "libobs.show_scene_item.cat_surprised_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "cat_surprise",
+            "name": "cat_surprised",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -2969,7 +2969,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "cat_surprise_gif",
+                        "name": "cat_surprised_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -3180,14 +3180,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.cat_fear_gif": [],
-                "libobs.show_scene_item.cat_fear_gif": []
+                "libobs.hide_scene_item.cat_fearful_gif": [],
+                "libobs.show_scene_item.cat_fearful_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "cat_fear",
+            "name": "cat_fearful",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -3213,7 +3213,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "cat_fear_gif",
+                        "name": "cat_fearful_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -3241,14 +3241,14 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.cat_disgust_gif": [],
-                "libobs.show_scene_item.cat_disgust_gif": []
+                "libobs.hide_scene_item.cat_disgusted_gif": [],
+                "libobs.show_scene_item.cat_disgusted_gif": []
             },
             "id": "scene",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "cat_disgust",
+            "name": "cat_disgusted",
             "prev_ver": 419430408,
             "private_settings": {},
             "push-to-mute": false,
@@ -3274,7 +3274,7 @@
                         "group_item_backup": false,
                         "id": 1,
                         "locked": false,
-                        "name": "cat_disgust_gif",
+                        "name": "cat_disgusted_gif",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0

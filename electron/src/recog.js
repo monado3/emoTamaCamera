@@ -41,12 +41,12 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
     // From Here: coded by Kazuaki Oomori
 }).then(result => {
-    try{
+    try {
         obs_b.connect()
-    }catch(e){
-        setTimeout(obs_b.connect(),10000)
+    } catch (e) {
+        setTimeout(obs_b.connect(), 10000)
     }
-    
+
     var video = document.getElementById("video");
     var cameraSelector = document.getElementById("camera-selector");
 
@@ -82,7 +82,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
                 // check hand raised or not(true or false)
                 const raise = recog_hand.check_raise(hands)
                 console.log(raise)
-                if(raise){
+                if (raise) {
                     obs_b.change_emotion(hand)
                 }
             }
