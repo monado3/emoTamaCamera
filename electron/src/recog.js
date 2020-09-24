@@ -3,8 +3,15 @@ const electron = require("electron");
 
 //const remote = electron.remote;
 const obs_broker = require("./obs-broker.js");
-
 const obs_b = new obs_broker
+
+function sleep(waitMsec) {
+    var startMsec = new Date();
+
+    // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+    while (new Date() - startMsec < waitMsec);
+  }
+
 
 faceapi.env.monkeyPatch({
     Canvas: HTMLCanvasElement,
@@ -41,12 +48,9 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
     // From Here: coded by Kazuaki Oomori Shohei Hisamitsu
 }).then(result => {
-    try {
-        obs_b.connect()
-    } catch (e) {
-        setTimeout(obs_b.connect(), 10000)
-    }
 
+    sleep(10000);
+    obs_b.connect();
     var video = document.getElementById("video");
     var cameraSelector = document.getElementById("camera-selector");
 
@@ -79,8 +83,8 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
             }
 
             canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
-            faceapi.draw.drawDetections(canvas, resizedDetections)
-            faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+            // faceapi.draw.drawDetections(canvas, resizedDetections)
+            // faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
         }, 1600)
     }
 
@@ -89,6 +93,8 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         clearInterval(testTimer);
     }
 
+    var recog_emotion = new Emotion()
+    var recog_hand = new HandPose()
 
     video.addEventListener('play', () => {
         const canvas = faceapi.createCanvasFromMedia(video)
@@ -96,8 +102,6 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         const displaySize = { width: video.width, height: video.height }
         faceapi.matchDimensions(canvas, displaySize)
 
-        var recog_emotion = new Emotion()
-        var recog_hand = new HandPose()
 
         stopTimer();
         startTimer(displaySize, recog_emotion, recog_hand, canvas);
