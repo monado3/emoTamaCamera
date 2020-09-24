@@ -74,6 +74,9 @@ class OBSBroker {
     disconnect() {
         this.sock.disconnect();
     }
+    close (){
+        exec(`taskkill /im obs64.exe`);
+    }
 }
 
 module.exports = OBSBroker;
