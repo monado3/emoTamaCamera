@@ -39,7 +39,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
     }
     // To Here: coded by Shohei Hisamitsu
 
-    // From Here: coded by Kazuaki Oomori
+    // From Here: coded by Kazuaki Oomori Shohei Hisamitsu
 }).then(result => {
     try {
         obs_b.connect()
@@ -56,6 +56,40 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         audio: false,//do not get audio
     });
     // Event for get emotion
+    var testTimer
+    function startTimer(displaySize, recog_emotion, recog_hand, canvas) {
+        testTimer = setInterval(async () => {
+            //get face positions and probability of emotions
+            const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
+            const resizedDetections = faceapi.resizeResults(detections, displaySize)
+            const hand = await handpose.load()
+
+            let emotion = recog_emotion.get_emotion(detections)
+
+            obs_b.change(avatar, emotion)
+
+            const hands = await hand.estimateHands(video)
+            if (hands) {
+                // check hand raised or not(true or false)
+                const raise = recog_hand.check_raise(hands)
+                console.log(raise)
+                if (raise) {
+                    obs_b.change_emotion("hand")
+                }
+            }
+
+            canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
+            faceapi.draw.drawDetections(canvas, resizedDetections)
+            faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+        }, 1600)
+    }
+
+    function stopTimer() {
+        //console.log("stop!")
+        clearInterval(testTimer);
+    }
+
+
     video.addEventListener('play', () => {
         const canvas = faceapi.createCanvasFromMedia(video)
         document.body.append(canvas)
@@ -65,39 +99,15 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         var recog_emotion = new Emotion()
         var recog_hand = new HandPose()
 
-        obs_b.change_avatar(avatar)
-
-        setInterval(async () => {
-            //get face positions and probability of emotions
-            const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
-            const resizedDetections = faceapi.resizeResults(detections, displaySize)
-            const hand = await handpose.load()
-
-            let emotion = recog_emotion.get_emotion(detections)
-
-            obs_b.change_emotion(emotion)
-
-            const hands = await hand.estimateHands(video)
-            if (hands) {
-                // check hand raised or not(true or false)
-                const raise = recog_hand.check_raise(hands)
-                console.log(raise)
-                if (raise) {
-                    obs_b.change_emotion(hand)
-                }
-            }
-
-            canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
-            faceapi.draw.drawDetections(canvas, resizedDetections)
-            faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-        }, 1600)
+        stopTimer();
+        startTimer(displaySize, recog_emotion, recog_hand, canvas);
     })
 
     // リアルタイムに再生（ストリーミング）させるためにビデオタグに流し込む
     media.then((stream) => {
         video.srcObject = stream;
     });
-    // To Here: Coded by Kazuaki Oomori
+    // To Here: Coded by Kazuaki Oomori Shohei Hisamitsu
 
     // From Here: Coded by Yuma Ito
     cameraDeviceIds.forEach(camera => {
