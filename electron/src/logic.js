@@ -64,16 +64,16 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
                 //get face positions and probability of emotions
                 const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
                 const resizedDetections = faceapi.resizeResults(detections, displaySize)
-                
-    
+
+
                 let emotion = recog_emotion.get_emotion(detections)
-    
+
                 if(!emotion){
                     emotion = "absent"
                 }
-    
+
                 obs_b.change(avatar, emotion)
-    
+
                 const hands = await hand.estimateHands(video)
                 if (hands) {
                     // check hand raised or not(true or false)
@@ -83,28 +83,28 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
                         obs_b.change_emotion("hand")
                     }
                 }
-    
+
                 canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
                 //faceapi.draw.drawDetections(canvas, resizedDetections)
                 //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
             }, 1600)
         }
-    
+
         function stopTimer() {
             //console.log("stop!")
             clearInterval(testTimer);
         }
-    
+
         var recog_emotion = new Emotion()
         var recog_hand = new HandPose()
-    
+
         video.addEventListener('play', () => {
 
             const canvas = faceapi.createCanvasFromMedia(video)
             document.body.append(canvas)
             const displaySize = { width: video.width, height: video.height }
             faceapi.matchDimensions(canvas, displaySize)
-    
+
             //console.log("startTimer")
             stopTimer();
             startTimer(displaySize, recog_emotion, recog_hand, canvas, hand);
@@ -112,7 +112,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
             loading.classList.add('loaded');
         })
     })
-    
+
 
     // リアルタイムに再生（ストリーミング）させるためにビデオタグに流し込む
     media.then((stream) => {
