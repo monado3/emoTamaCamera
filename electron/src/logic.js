@@ -99,6 +99,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         var recog_hand = new HandPose()
     
         video.addEventListener('play', () => {
+
             const canvas = faceapi.createCanvasFromMedia(video)
             document.body.append(canvas)
             const displaySize = { width: video.width, height: video.height }
@@ -106,8 +107,9 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
     
             //console.log("startTimer")
             stopTimer();
-    
             startTimer(displaySize, recog_emotion, recog_hand, canvas, hand);
+            const loading = document.getElementById('loading');
+            loading.classList.add('loaded');
         })
     })
     
