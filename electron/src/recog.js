@@ -26,7 +26,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 }).then(result => {
 
     var video = document.getElementById("video");
-    var video_original=document.getElementById("video-original");
+    var video2 = document.getElementById("video2");
     var cameraSelector = document.getElementById("camera-selector");
 
 
@@ -48,10 +48,23 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
         canvas.style.height=video.height+'px'
         canvas.style.width=video.width+'px'
         video_bbox.appendChild(canvas);
-        console.log(video_bbox);
+
+        const video_bbox2=document.getElementById('video-bbox2')
+        video_bbox2.removeChild(document.getElementById('face-detector2'))
+        const canvas2 = faceapi.createCanvasFromMedia(video)
+        canvas2.id='face-detector'
+        canvas2.style.position='absolute'
+        canvas2.style.zIndex=1;
+        canvas2.style.left='0px'
+        canvas2.style.top='0px'
+        canvas2.style.height=video.height+'px'
+        canvas2.style.width=video.width+'px'
+        video_bbox2.appendChild(canvas2);
+
         // document.body.append(canvas);
         const displaySize = { width: video.width, height: video.height }
         faceapi.matchDimensions(canvas, displaySize)
+        faceapi.matchDimensions(canvas2, displaySize)
 
         var recog_emotion = new Emotion()
         var recog_hand = new HandPose()
@@ -61,7 +74,6 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
             const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options()).withFaceExpressions()
             const resizedDetections = faceapi.resizeResults(detections, displaySize)
             const hand = await handpose.load()
-            console.log('canvasis'+canvas)
 
             let emotion = recog_emotion.get_emotion(detections)
 
@@ -74,14 +86,16 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
             canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
             faceapi.draw.drawDetections(canvas, resizedDetections)
-            //faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+            canvas2.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
+            faceapi.draw.drawDetections(canvas2, resizedDetections)
+            faceapi.draw.drawFaceExpressions(canvas2, resizedDetections)
         }, 1600)
     })
 
     // リアルタイムに再生（ストリーミング）させるためにビデオタグに流し込む
     media.then((stream) => {
-        video_original.srcObject=stream;
         video.srcObject = stream;
+        video2.srcObject = stream;
     });
     // To Here: Coded by Kazuaki Oomori
 
@@ -99,8 +113,8 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
             video: { deviceId: cameraid },//get video
             audio: false,//do not get audio
         }).then((stream) => {
-            video_original.srcObject=stream;
             video.srcObject = stream;
+            video2.srcObject = stream;
         });
     })
 

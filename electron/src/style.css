@@ -119,11 +119,15 @@ body{
   float: left;
   position: relative;
 }
+#video-bbox2{
+  float: left;
+  position: relative;
+}
 
-#video{
+/* #video{
   position: absolute;
   left: 0px;
   top: 0px;
-}
+} */
 
 /* coded by Yuma Ito */
