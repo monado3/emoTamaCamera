@@ -6,6 +6,50 @@
 ![activity](https://img.shields.io/badge/activity-under_development-red.svg?style=flat)
 ![license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 
+<table>
+<thead>
+  <tr>
+    <th colspan="2">Item</th>
+    <th>Screenshot</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td colspan="2">GUI</td>
+    <td><img width="180" src="https://user-images.githubusercontent.com/36162674/94247385-01c34200-ff58-11ea-943a-e76ea7011b61.png"></img></td>
+  </tr>
+  <tr>
+    <td rowspan="7">Virtual Camera Output</td>
+    <td>happy</td>
+    <td><img width="180" src="./electron/resources/images/characters/cat_happy.gif"></img></td>
+  </tr>
+  <tr>
+    <td>sad</td>
+    <td><img width="180" src="./electron/resources/images/characters/glasses_sad.gif"></img></td>
+  </tr>
+  <tr>
+    <td>surprised</td>
+    <td><img width="180" src="./electron/resources/images/characters/normal_surprised.gif"></img></td>
+  </tr>
+  <tr>
+    <td>fearful/disgusted</td>
+    <td><img width="180" src="./electron/resources/images/characters/ribbon_fearful.gif"></img></td>
+  </tr>
+  <tr>
+    <td>angry</td>
+    <td><img width="180" src="./electron/resources/images/characters/tie_angry.gif"></img></td>
+  </tr>
+  <tr>
+    <td>neutral</td>
+    <td><img width="180" src="./electron/resources/images/characters/normal_neutral.gif"></img></td>
+  </tr>
+  <tr>
+    <td>hand</td>
+    <td><img width="180" src="./electron/resources/images/characters/hand.gif"></img></td>
+  </tr>
+</tbody>
+</table>
+
 # Requirements
 - A Web Camera
 - [OBS Studio (GUI Software)](https://obsproject.com/ja/download)
@@ -40,4 +84,4 @@ $ ../node_modules/.bin/electron ./main.js
 # Note
 1. If loading process continues more than 15 seconds, maybe something wrong with oppening obs websocket. Please close the window and try it again.
 1. Do not minimize the app window. It is reported that app will stop running for some reasons.
-1. If obs is already runnning on background, popup window will apear when you start app. In most cases, press "cancel" is enough. If it doesn't work, kill the background obs process and try it again.  
+1. If obs is already runnning on background, popup window will apear when you start app. In most cases, press "cancel" is enough. If it doesn't work, kill the background obs process and try it again.
