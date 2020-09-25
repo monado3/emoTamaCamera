@@ -7,7 +7,7 @@ const bt4 = document.getElementById('bt4');
 const bt5 = document.getElementById('bt5');
 const bt_list = [bt1, bt2, bt3, bt4, bt5];
 const character = document.getElementById('character');
-var avatar='normal';
+var avatar = 'normal';
 
 
 function changeButtonColor(index) {
@@ -21,28 +21,28 @@ function changeButtonColor(index) {
 bt1.addEventListener('click', () => {
     character.src = '../resources/images/characters/normal_neutral.gif';
     changeButtonColor(0);
-    avatar='normal';
+    avatar = 'normal';
 });
 bt2.addEventListener('click', () => {
     character.src = '../resources/images/characters/cat_neutral.gif';
     changeButtonColor(1);
-    avatar='cat';
+    avatar = 'cat';
 
 });
 bt3.addEventListener('click', () => {
     character.src = '../resources/images/characters/glasses_neutral.gif';
     changeButtonColor(2);
-    avatar='glasses';
+    avatar = 'glasses';
 });
 bt4.addEventListener('click', () => {
     character.src = '../resources/images/characters/ribbon_neutral.gif';
     changeButtonColor(3);
-    avatar='ribbon';
+    avatar = 'ribbon';
 });
 bt5.addEventListener('click', () => {
     character.src = '../resources/images/characters/tie_neutral.gif';
     changeButtonColor(4);
-    avatar='tie';
+    avatar = 'tie';
 });
 // navigator.mediaDevices.enumerateDevices()
 // .then(function(devices) {

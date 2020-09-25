@@ -37,3 +37,7 @@ $ cd electron/src
 $ ../node_modules/.bin/electron ./main.js
 ```
 
+# Note
+1. If loading process continues more than 15 seconds, maybe something wrong with oppening obs websocket. Please close the window and try it again.
+1. Do not minimize the app window. It is reported that app will stop running for some reasons.
+1. If obs is already runnning on background, popup window will apear when you start app. In most cases, press "cancel" is enough. If it doesn't work, kill the background obs process and try it again.  

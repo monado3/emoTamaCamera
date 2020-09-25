@@ -9,7 +9,7 @@ const OBSBroker = require('./obs-broker.js')
 const obss = new OBSSetUpper()
 const obsb = new OBSBroker()
 
-if(!OBSSetUpper.isInstalled()){
+if (!OBSSetUpper.isInstalled()) {
   obss.install()
 }
 obsb.launch()
@@ -50,7 +50,7 @@ app.whenReady().then(() => {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin'){
+  if (process.platform !== 'darwin') {
     obsb.disconnect()
     obsb.close()
     app.quit()
@@ -59,5 +59,3 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-console.log("logic.js")

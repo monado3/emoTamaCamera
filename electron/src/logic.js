@@ -15,7 +15,7 @@ const obs_b = new obs_broker
 function sleep(waitMsec) {
     var startMsec = new Date();
     while (new Date() - startMsec < waitMsec);
-  }
+}
 
 faceapi.env.monkeyPatch({
     Canvas: HTMLCanvasElement,
@@ -56,7 +56,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
     });
     // Event for get emotion
 
-    handpose.load().then(result=>{
+    handpose.load().then(result => {
         const hand = result
         var testTimer
         function startTimer(displaySize, recog_emotion, recog_hand, canvas, hand) {
@@ -68,7 +68,7 @@ navigator.mediaDevices.enumerateDevices().then(function (mediaDevices) {
 
                 let emotion = recog_emotion.get_emotion(detections)
 
-                if(!emotion){
+                if (!emotion) {
                     emotion = "absent"
                 }
 
