@@ -70,8 +70,8 @@
             1. close OBS Studio
     1. Install [obs-websocket 4.8](https://github.com/Palakis/obs-websocket/releases)
 1. change directory for the installation of this app
-1. `$ git clone https://github.com/shortintern2020-C-cryptograph/TeamE.git`
-1. `$ cd TeamE/electron`
+1. `$ git clone https://github.com/monado3/emoTamaCamera.git`
+1. `$ cd emoTamaCamera/electron`
 1. `$ npm install`
 
 # Usage
@@ -82,6 +82,7 @@ $ ../node_modules/.bin/electron ./main.js
 ```
 
 # Note
-1. If loading process continues more than 15 seconds, maybe something wrong with oppening obs websocket. Please close the window and try it again.
-1. Do not minimize the app window. It is reported that app will stop running for some reasons.
-1. If obs is already runnning on background, popup window will apear when you start app. In most cases, press "cancel" is enough. If it doesn't work, kill the background obs process and try it again.
+- If loading process continues more than 15 seconds, maybe something wrong with oppening obs websocket. Please close the window and try it again.
+- Do not minimize the app window. It is reported that app will stop running for some reasons.
+- If obs is already runnning on background, popup window will apear when you start app. In most cases, press "cancel" is enough. If it doesn't work, kill the background obs process and try it again.
+- This was originally developed under [this repository](https://github.com/shortintern2020-C-cryptograph/TeamE)
