@@ -5,7 +5,7 @@ const OBSWebSocket = require('obs-websocket-js');
 
 class OBSBroker {
 
-    obsexe = String.raw`C:\PROGRA~1\obs-studio\bin\64bit\obs64.exe`; //change this if your install path is not here. by sho
+    obsexe = String.raw`C:\PROGRA~1\obs-studio\bin\64bit\obs64.exe`; // change this if your install path is not here.
     obsdir = path.dirname(this.obsexe);
 
     constructor() {
